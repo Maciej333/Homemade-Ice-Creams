@@ -1,5 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Dancing+Script:wght@600&display=swap");
 body a:hover {
   text-decoration: underline;
+}
+body main {
+  font-family: "Coda Caption", sans-serif;
+  font-family: "Dancing Script", cursive;
+}
+body main #main-text {
+  font-size: calc(1rem + 5vw);
 }
 
 /*# sourceMappingURL=style.css.map */
