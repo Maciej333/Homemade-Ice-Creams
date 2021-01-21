@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Dancing+Script:wght@600&display=swap");
-body a:hover {
-  text-decoration: underline;
-}
-body main {
+body {
   font-family: "Coda Caption", sans-serif;
   font-family: "Dancing Script", cursive;
+}
+body .section-text {
+  font-family: monospace;
+}
+body a:hover {
+  text-decoration: underline;
 }
 body main #main-text {
   font-size: calc(1rem + 5vw);
@@ -26,8 +29,11 @@ body main .bg-white-opacity {
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
 }
-body main .section-text {
-  font-family: monospace;
+body main section article:hover {
+  transform: scale(1.05);
+}
+body footer i:hover {
+  color: #969696;
 }
 
 /*# sourceMappingURL=style.css.map */
