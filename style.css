@@ -32,6 +32,18 @@ body main .bg-white-opacity {
 body main section article:hover {
   transform: scale(1.05);
 }
+body main section #main-review-text {
+  border-bottom: 2px dashed black;
+}
+body main section #review-dots {
+  transform: scale(0.5);
+}
+body main section #review-dots .active {
+  color: black;
+}
+body main section #review-dots .far:hover {
+  transform: scale(1.1);
+}
 body footer i:hover {
   color: #969696;
 }

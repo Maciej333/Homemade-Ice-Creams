@@ -42,8 +42,26 @@ body {
             article:hover {
                 transform: scale(1.05);
             }
+
+            #main-review-text {
+                border-bottom: 2px dashed black;
+            }
+
+            #review-dots {
+                transform: scale(0.5);
+
+                .active {
+                    color: black;
+                }
+
+                .far:hover {
+                    transform: scale(1.1);
+                }
+            }
         }
     }
+
+ 
 
     footer {
         i:hover {
