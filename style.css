@@ -2,6 +2,7 @@
 body {
   font-family: "Coda Caption", sans-serif;
   font-family: "Dancing Script", cursive;
+  min-height: 100vh;
 }
 body .section-text {
   font-family: monospace;
@@ -11,6 +12,10 @@ body a:hover {
 }
 body main section article:hover {
   transform: scale(1.05);
+}
+body footer {
+  position: absolute;
+  bottom: 0;
 }
 body footer i:hover {
   color: #969696;
