@@ -1,1 +1,27 @@
 @import 'style';
+
+#filter button{
+    border: none;
+}
+
+#products {
+    .ice {
+        max-width: 300px;
+        margin: 5px;
+        padding: 15px;
+
+        &:hover {
+            border: 2px solid rgb(200,200,200);
+            border-radius: 10px;
+        }
+
+        p:first-child {
+            border-bottom: 2px dashed black;
+        }
+
+        svg {
+            max-width: 80px;
+            float: left;
+        }
+    }   
+}
