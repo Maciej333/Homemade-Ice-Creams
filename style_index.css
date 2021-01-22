@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Dancing+Script:wght@600&display=swap");
+body {
+  font-family: "Coda Caption", sans-serif;
+  font-family: "Dancing Script", cursive;
+}
+body .section-text {
+  font-family: monospace;
+}
+body a:hover {
+  text-decoration: underline;
+}
+body main section article:hover {
+  transform: scale(1.05);
+}
+body footer i:hover {
+  color: #969696;
+}
+
+body main #main-text {
+  font-size: calc(1rem + 5vw);
+}
+body main .padding-5 {
+  padding-top: 5%;
+}
+body main .padding-10 {
+  padding-top: 10%;
+}
+body main .rounded-diagonal {
+  -webkit-border-radius: 1% 5%;
+  -moz-border-radius: 1% 5%;
+  border-radius: 1% 5%;
+}
+body main .bg-white-opacity {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+body main section #main-review-text {
+  border-bottom: 2px dashed black;
+}
+body main section #review-dots {
+  transform: scale(0.5);
+}
+body main section #review-dots .active {
+  color: black;
+}
+body main section #review-dots .far:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=style_index.css.map */
