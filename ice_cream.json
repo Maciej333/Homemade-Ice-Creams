@@ -1,0 +1,111 @@
+{
+	"iceCreams": [
+      {
+         "title":"Kielecki Mayo",
+         "color1":"FFFAF0",
+         "color2":"FFFAF0",
+         "rating":"5",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"yes"
+      },
+      {
+         "title":"Apple",
+         "color1":"228B22",
+         "color2":"B22222",
+         "rating":"4",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"no"
+      },
+      {
+         "title":"Banana",
+         "color1":"FFD700",
+         "color2":"FFD700",
+         "rating":"5",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"no"
+      },
+      {
+         "title":"Green Grape",
+         "color1":"008000",
+         "color2":"ADFF2F",
+         "rating":"4",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"no"
+      },
+      {
+         "title":"Raspberry",
+         "color1":"B22222",
+         "color2":"B22222",
+         "rating":"5",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"yes"
+      },
+      {
+         "title":"Cherry",
+         "color1":"8B0000",
+         "color2":"8B0000",
+         "rating":"4",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"no"
+      },
+      {
+         "title":"grapefruit",
+         "color1":"FF8C00",
+         "color2":"8B0000",
+         "rating":"3",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"no"
+      },
+      {
+         "title":"Orange",
+         "color1":"FF8C00",
+         "color2":"FF8C00",
+         "rating":"5",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"yes"
+      },
+            {
+         "title":"Coconut",
+         "color1":"FFFAF0",
+         "color2":"8B4513",
+         "rating":"5",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"no"
+      },
+      {
+         "title":"Pineapple",
+         "color1":"8B4513",
+         "color2":"FFD700",
+         "rating":"4",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"no"
+      },
+      {
+         "title":"Blueberry",
+         "color1":"663399",
+         "color2":"4B0082",
+         "rating":"5",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"yes"
+      },
+      {
+         "title":"Plum",
+         "color1":"663399",
+         "color2":"FFD700",
+         "rating":"3",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sunt saepe fuga doloremque
+                            deserunt, voluptatem reiciendis vitae.",
+         "bestseller":"no"
+      }]
+}      
