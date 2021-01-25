@@ -7,45 +7,113 @@ let svgIceCream = `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="
 let divOfProducts = document.querySelector("#products");
 let divToPrepend = divOfProducts.children[0];
 
+let bestsellerBtn = document.querySelector("#bestseller");
+let topRankedBtn = document.querySelector("#top-ranked");
+let searchInput = document.querySelector("#search");
+
+let iceCreamsArray = [];
+
+let searchFilter = {
+    bestseller: false,
+    topRanked: false,
+    searchInput: /.*/
+};
+
+let spinner = document.querySelector('#spinner');
+
+bestsellerBtn.addEventListener('click', () => {
+    searchFilter.bestseller = !searchFilter.bestseller;
+    bestsellerBtn.classList.toggle('bg-secondary');
+    addIceCream();
+})
+
+topRankedBtn.addEventListener('click', () => {
+    searchFilter.topRanked = !searchFilter.topRanked;
+    topRankedBtn.classList.toggle('bg-secondary');
+    addIceCream();
+})
+
+searchInput.addEventListener('keyup', () => {
+    if (searchInput.value.trim()) {
+        searchFilter.searchInput = searchInput.value.trim();
+    } else {
+        searchFilter.searchInput = /.*/;
+    }
+    addIceCream();
+})
+
 fetchIceCreams();
 
 function fetchIceCreams() {
     fetch('https://raw.githubusercontent.com/Maciej333/Homemade-Ice-Creams/main/ice_cream.json')
         .then(response => {
-            let responseJSON = response.json();
-            responseJSON.then(item => {
-                for (let iceCream of item.iceCreams) {
-                    addIceCream(iceCream);
-                }
-            })
+            if (response.ok) {
+                toggleSpinner();
+                let responseJSON = response.json();
+                responseJSON.then(item => {
+                    for (let iceCream of item.iceCreams) {
+                        iceCreamsArray.push(iceCream);
+                    }
+                }).then(() => {
+                    addIceCream();
+                });
+                toggleSpinner();
+            } else {
+                return Promise.reject(`Http error: ${response.status}`)
+            }
         })
         .catch(err => console.error(err));
 }
 
-function addIceCream(obj) {
-    let mainIceCreamDiv = document.createElement('div');
-    mainIceCreamDiv.classList.add('ice');
-
-    let svg = svgIceCream.replace("fff", obj.color1);
-    svg = svg.replace("001", obj.color2);
-    // metoda innerHTML wykorzystana wylacznie z uwagi na manipulacje parametrami SVG, w rzeczywistych okolicznosciach pobralbym zdjecie z servera
-    mainIceCreamDiv.innerHTML = svg;
-
-    if (obj.bestseller === "yes") {
-        let pBestseller = createPBestseller();
-        mainIceCreamDiv.append(pBestseller);
+function deleteRenderIceCream() {
+    for (let i = divToPrepend.children.length - 1; i > 0; i--) {
+        divToPrepend.removeChild(divToPrepend.children[i]);
     }
+}
 
-    let pTitle = createPTitle(obj.title);
-    mainIceCreamDiv.append(pTitle);
+function iceCreamArrayAfterFilter() {
+    let iceCreamToRender = iceCreamsArray.slice();
+    if (searchFilter.bestseller) {
+        iceCreamToRender = iceCreamToRender.filter(iceCream => iceCream.bestseller === "yes");
+    }
+    if (!(new RegExp(searchFilter.searchInput).test(/.*/))) {
+        iceCreamToRender = iceCreamToRender.filter(iceCream => new RegExp(searchFilter.searchInput.toLowerCase()).test(iceCream.title.toLowerCase()));
+    }
+    if (searchFilter.topRanked) {
+        iceCreamToRender = iceCreamToRender.sort((iceCream1, iceCream2) => { return iceCream2.rating - iceCream1.rating; });
+    }
+    return iceCreamToRender;
+}
 
-    let pRating = createPRaring(obj.rating);
-    mainIceCreamDiv.append(pRating);
+function addIceCream() {
+    deleteRenderIceCream();
+    let iceCreamsRenderArray = iceCreamArrayAfterFilter();
 
-    let pDescription = createPDescription(obj.description);
-    mainIceCreamDiv.append(pDescription);
+    iceCreamsRenderArray.forEach(obj => {
+        let mainIceCreamDiv = document.createElement('div');
+        mainIceCreamDiv.classList.add('ice');
 
-    divToPrepend.append(mainIceCreamDiv);
+        let svg = svgIceCream.replace("fff", obj.color1);
+        svg = svg.replace("001", obj.color2);
+        // metoda innerHTML wykorzystana wylacznie z uwagi na manipulacje parametrami SVG, w rzeczywistych okolicznosciach pobralbym zdjecie z servera
+        mainIceCreamDiv.innerHTML = svg;
+
+        if (obj.bestseller === "yes") {
+            let pBestseller = createPBestseller();
+            mainIceCreamDiv.append(pBestseller);
+        }
+
+        let pTitle = createPTitle(obj.title);
+        mainIceCreamDiv.append(pTitle);
+
+        let pRating = createPRaring(obj.rating);
+        mainIceCreamDiv.append(pRating);
+
+        let pDescription = createPDescription(obj.description);
+        mainIceCreamDiv.append(pDescription);
+
+        divToPrepend.append(mainIceCreamDiv);
+    });
 }
 
 function createPBestseller() {
@@ -84,4 +152,8 @@ function createPDescription(description) {
     pDescription.classList.add('mx-1');
     pDescription.textContent = description;
     return pDescription;
+}
+
+function toggleSpinner() {
+    spinner.hidden = !spinner.hidden;
 }
