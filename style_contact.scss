@@ -1,1 +1,45 @@
 @import 'style';
+
+main {
+    #gmap-canvas {
+        height: 50vh;
+        max-width: 600px;
+        max-height: 500px;
+    }
+ 
+    #space {
+        height: 2px;
+        width: 80vw;
+        background-color: black;
+    }
+
+    form {
+        .invalid {
+            border: 1px solid red;
+        }
+
+        .invalid-text {
+            color: red;
+        }
+
+        .valid {
+            border: 1px solid rgb(57, 255, 20);
+        }
+
+        .valid-text {
+            color: rgb(57, 255, 20);
+        }
+
+        textarea {
+            height: 150px;
+        }
+    };
+
+    #success {
+        font-size: 2rem;
+        text-align: center;
+        background-color: rgb(57, 255, 20);
+        border-radius: 10px;
+        padding: 10px;
+    }
+}
