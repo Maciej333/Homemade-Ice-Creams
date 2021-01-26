@@ -21,4 +21,37 @@ body footer i:hover {
   color: #969696;
 }
 
+main #gmap-canvas {
+  height: 50vh;
+  max-width: 600px;
+  max-height: 500px;
+}
+main #space {
+  height: 2px;
+  width: 80vw;
+  background-color: black;
+}
+main form .invalid {
+  border: 1px solid red;
+}
+main form .invalid-text {
+  color: red;
+}
+main form .valid {
+  border: 1px solid #39ff14;
+}
+main form .valid-text {
+  color: #39ff14;
+}
+main form textarea {
+  height: 150px;
+}
+main #success {
+  font-size: 2rem;
+  text-align: center;
+  background-color: #39ff14;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 /*# sourceMappingURL=style_contact.css.map */

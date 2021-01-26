@@ -23,6 +23,7 @@
     <title>Homemade Ice Cream!</title>
 
     <link rel="stylesheet" href="style_contact.css">
+    <script src="form.js" defer></script>
 </head>
 
 <body>
@@ -51,17 +52,49 @@
         </div>
     </nav>
 
-    <main>
+    <main class="container-fluid">
+        <p class="text-center fs-1">Where can You find Us?</p>
+        <section class="row">
+            <div class="col-1 col-md-3 px-0"></div>
+            <div class="col-10 col-md-6 px-0 d-flex flex-row justify-content-center">
+                <iframe id="gmap-canvas" class="col-12"
+                    src="https://maps.google.com/maps?q=warszawa&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0">
+                </iframe>
+            </div>
+        </section>
 
+        <p class="text-center fs-1 mt-5">Want to know more? Please contact Us :)</p>
+        <section class="row">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-10 col-md-6">
+                <form class="row bg-secondary p-2 rounded-3 text-light">
+                    <div class="col-12">
+                        <label for="input-title" class="form-label fs-4">Message title</label>
+                        <input type="text" class="form-control" id="input-title">
+                        <div class="fs-6 invalid-text">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="input-Email" class="form-label fs-4">Email</label>
+                        <input type="email" class="form-control" id="input-Email">
+                        <div class="fs-6 invalid-text">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <span class="input-textarea">Message text</span>
+                        <textarea class="form-control fs-4" id="input-textarea"></textarea>
+                        <div class="fs-6 invalid-text">
+                        </div>
+                    </div>
+                    <div class="col-8"></div>
+                    <button type="submit" class="btn btn-primary col-4 my-3" value="Send">Send</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <footer class="container-fluid bg-secondary text-center fs-1 pt-2 bg-dark text-light">
-        <div class="position-relative">
-            What's Your favourite flavour?
-            <a href="#" class="position-absolute end-0 pe-2 text-light"><i id="go-up" class="fas fa-arrow-up"></i></a>
-        </div>
-    </footer>
-
+    <div class="py-5"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
